@@ -33,6 +33,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
         type: "image/svg+xml"
       },
     ],
+    display: 'standalone',
   },
   devOptions: {
     enabled: process.env.SW_DEV === "true",
