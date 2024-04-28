@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useContext } from "react";
+import { useContext, useMemo } from "react";
 import AppContext from "../AppContext";
 import { useParams } from "react-router-dom";
 
@@ -10,6 +10,10 @@ type ClickerParams = {
 const Clicker = () => {
   const { count, addCount } = useContext(AppContext);
   const { path } = useParams<ClickerParams>();
+
+  const a = useMemo(() => {
+    return count
+  }, [count])
 
   return (
     <Box>
@@ -22,7 +26,7 @@ const Clicker = () => {
         </Typography>
       </Box>
       <Typography variant="body2" className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Click on the Vite and React logos to learn more {a}
       </Typography>
     </Box>
   );
