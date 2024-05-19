@@ -12,8 +12,8 @@ const Clicker = () => {
   const { path } = useParams<ClickerParams>();
 
   const a = useMemo(() => {
-    return count
-  }, [count])
+    return count;
+  }, [count]);
 
   return (
     <Box>
